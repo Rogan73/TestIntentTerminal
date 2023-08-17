@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestPrivatTerminal</string>
+    <string name="selected">Selected</string>
+    <string name="not_selected">Not Selected</string>
+    <string name="privat_clid">2965204616</string>
+    <string name="privat_secret">w2Jm4mcgGMvFnBQT</string>
+    <string name="privat_url">https://dio.privatbank.ua/api/nfcpos/integrators</string>
+
+</resources>

@@ -1,0 +1,22 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Demo/TestIntentTerminal/app/src/main/res/layout/activity_main.xml" value="0.2421875" />
+        <entry key="..\:/Demo/Test_Intent_call_aplication/TestIntentTerminal/app/src/main/res/layout/activity_main.xml" value="0.2421875" />
+        <entry key="..\:/Demo/Test_Intent_call_aplication/TestIntentTerminal/app/src/main/res/layout/test_data.xml" value="0.264" />
+        <entry key="..\:/Demo/Test_Intent_call_aplication/TestIntentTerminal/app/src/main/res/layout/test_gone_margin_bottom.xml" value="0.4" />
+        <entry key="..\:/Demo/Test_Intent_call_aplication/TestIntentTerminal/app/src/main/res/layout/testl.xml" value="0.2421875" />
+        <entry key="..\:/Projects/StudioProject/Demo/Test_Intent_call_aplication/TestIntentTerminal/app/src/main/res/layout/activity_main.xml" value="0.3055555555555556" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/test_gone_margin_bottom.xml" value="0.22644927536231885" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

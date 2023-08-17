@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- android:background="@drawable/toolbar_gradient"-->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="26dp"
+            tools:context=".MainActivity">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="16dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvClid"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="Clid" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputClid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="100"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edClid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Clid"
+                            android:inputType="textNoSuggestions"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvSecret"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="Secret" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputSecret"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="100"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edSecret"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Secret"
+                            android:inputType="textNoSuggestions"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvJWT"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="JWT токен" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputJwt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="1000"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edJwt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="jwt токен"
+                            android:inputType="textNoSuggestions"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCallback"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:text="Callback" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputCallback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="100"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edCallback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="callback"
+                            android:inputType="textNoSuggestions"
+                            android:maxLength="258"
+                            android:text="https://dio.privatbank.ua"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/getTokenButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Получить token"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btnStart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Оплатить"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btnCheckResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginEnd="26dp"
+                        android:text="Проверить результат"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:inputType="textMultiLine" />
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
