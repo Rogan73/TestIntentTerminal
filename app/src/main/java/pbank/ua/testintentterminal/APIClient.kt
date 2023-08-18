@@ -23,8 +23,8 @@ class ApiClient(context: Context, private val callback: ClientAPICallback) {
 
     private fun mainPrepare(data :String, php:String ):String{
         cur_cmd=php
-        //val clid = context2.getString(R.string.privat_clid)
-        //val secret = context2.getString(R.string.privat_secret)
+       // val clid = context2.getString(R.string.privat_clid)
+       // val secret = context2.getString(R.string.privat_secret)
         val clid = MainActivity.CLID
         val secret = MainActivity.SECRET
         val murl=context2.getString(R.string.privat_url) // "https://dio.privatbank.ua/api/nfcpos/integrators"

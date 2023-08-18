@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), ClientAPICallback  {
             CALLBACK = binding.edCallback.text.toString()
             settingsManager.saveEditTextValue("edCallback", CALLBACK)
 
-            val TOKEN = binding.edJwt.text.toString();
+            // TOKEN = binding.edJwt.text.toString();
 
             binding.edResult.setText("")
 
@@ -77,18 +77,18 @@ class MainActivity : AppCompatActivity(), ClientAPICallback  {
 
         binding.getTokenButton.setOnClickListener {
 
-            val clid = binding.edClid.text.toString()
-            val secret = binding.edSecret.text.toString()
+             CLID = binding.edClid.text.toString()
+             SECRET = binding.edSecret.text.toString()
 
-            if (clid.isBlank() || secret.isBlank()) {
+            if (CLID.isBlank() || SECRET.isBlank()) {
                 Toast.makeText(this, "Clid и Secret должны быть заполнены", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             //save options
             val settingsManager = SettingsManager(this)
-            settingsManager.saveEditTextValue("edClid", clid)
-            settingsManager.saveEditTextValue("edSecret", secret)
+            settingsManager.saveEditTextValue("edClid", CLID)
+            settingsManager.saveEditTextValue("edSecret", SECRET)
 
 
             binding.edJwt.setText("")
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), ClientAPICallback  {
 
             val transactionId: String = ""
             val purpose: String = "ТЕСТ 1ГРН"
-            val operation: String = "pay"
+            val operation: String ="pay"//"purchase" //"pay"
             val amount: Double = 1.00
 
 
@@ -128,8 +128,19 @@ class MainActivity : AppCompatActivity(), ClientAPICallback  {
         //binding.edJwt.setText(result)
         var res="OK"
         if (!success){res="NO"}
+
+        if  ((res=="OK") && (cmd=="token")) {
+            TOKEN = result
+
+        }
+
+        if ((res=="OK") && (cmd=="check")) {
+             // автоматом можно проверить результат
+        }
+
         runOnUiThread {
-            binding.edJwt.append("$cmd: $res\n$result")
+            if (cmd=="token") {binding.edJwt.setText(result)}
+            binding.edResult.append("$cmd: $res\n$result")
         }
 
     }
