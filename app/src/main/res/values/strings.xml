@@ -4,6 +4,11 @@
     <string name="not_selected">Not Selected</string>
     <string name="privat_clid">2965204616</string>
     <string name="privat_secret">w2Jm4mcgGMvFnBQT</string>
+    <string name="pay">Оплата</string>
+    <string name="refund">Возврат</string>
+    <string name="get_token">Получить token</string>
+    <string name="get_check">Проверить результат</string>
     <string name="privat_url">https://dio.privatbank.ua/api/nfcpos/integrators</string>
+    <string name="summa">Сумма</string>
 
 </resources>

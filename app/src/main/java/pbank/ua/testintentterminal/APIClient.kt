@@ -31,7 +31,7 @@ class ApiClient(context: Context, private val callback: ClientAPICallback) {
         val signed = (System.currentTimeMillis() / 1000).toString()
         val signature = sha1(signed + secret + data + secret)
         val url = "$murl/$php.php?clid=$clid&signed=$signed&signature=$signature"   ///check.php?clid=$clid&signed=$signed&signature=$signature
-        val options = mapOf("Content-Type" to "application/json")
+        //val options = mapOf("Content-Type" to "application/json")
         makePostRequest(url, data)
         return "";
     }

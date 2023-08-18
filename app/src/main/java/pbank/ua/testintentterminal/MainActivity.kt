@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.InputFilter
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.activity.result.ActivityResult
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity(), ClientAPICallback  {
             CALLBACK = binding.edCallback.text.toString()
             settingsManager.saveEditTextValue("edCallback", CALLBACK)
 
-            // TOKEN = binding.edJwt.text.toString();
+            TOKEN = binding.edJwt.text.toString();
 
             binding.edResult.setText("")
 
@@ -94,22 +95,56 @@ class MainActivity : AppCompatActivity(), ClientAPICallback  {
             binding.edJwt.setText("")
             val apiClient = ApiClient(this, this)
 
-            val transactionId: String = ""
+            var transactionId: String = ""
             val purpose: String = "ТЕСТ 1ГРН"
-            val operation: String ="pay"//"purchase" //"pay"
-            val amount: Double = 1.00
+
+            var operation: String   //"purchase" //"pay"
+
+            if (binding.rbPay.isChecked) {
+                operation="pay"
+            }else{
+                operation="refund"
+                transactionId = binding.edTrans.text.toString()
+                if (transactionId.isBlank()){
+                    Toast.makeText(this,"Введите номер транзакции",  LENGTH_SHORT ).show()
+                    return@setOnClickListener
+                }
+            }
+
+            val amount: Double =  binding.amountEditText.text.toString().toDouble() //1.00
 
 
-            apiClient?.mainReq(operation,amount,purpose,transactionId)
+
+            apiClient.mainReq(operation,amount,purpose,transactionId)
             //binding.edJwt.setText(response)
         }
 
         binding.btnCheckResult.setOnClickListener {
            if (!binding.edJwt.text.isNullOrBlank()){
                val apiClient2 = ApiClient(this, this)
-               apiClient2?.mainCheck(binding.edJwt.text.toString())
+               apiClient2.mainCheck(binding.edJwt.text.toString())
            }
         }
+
+        binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.rbPay -> {
+                    binding.btnStart.text = this.getString(R.string.pay) // "Оплата"
+                    binding.btnStart.setBackgroundColor(this.getColor(R.color.green_500))
+
+                    binding.grTranslbl.visibility= View.GONE
+                }
+                R.id.rbRefund -> {
+                    // Обработка выбора опции 2
+                    binding.btnStart.text = this.getString(R.string.refund) // "Возврат"
+                    binding.btnStart.setBackgroundColor(this.getColor(R.color.orange_500))
+                    binding.grTranslbl.visibility=View.VISIBLE
+                }
+            }
+        }
+
+
+
 
         //load options
         val settingsManager = SettingsManager(this)
