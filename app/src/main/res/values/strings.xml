@@ -10,5 +10,11 @@
     <string name="get_check">Проверить результат</string>
     <string name="privat_url">https://dio.privatbank.ua/api/nfcpos/integrators</string>
     <string name="summa">Сумма</string>
+    <string name="descr">Описание</string>
+    <string name="def_descr">Тестовый платеж</string>
+    <string name="lbl_callback">Callback</string>
+    <string name="def_callback">https://dio.privatbank.ua</string>
+    <string name="lbl_token">JWT токен</string>
+    <string name="hint_token">jwt токен</string>
 
 </resources>

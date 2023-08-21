@@ -52,7 +52,6 @@
                             android:id="@+id/edClid"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Clid"
                             android:inputType="textNoSuggestions"
                             android:textSize="14sp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -86,7 +85,6 @@
                             android:id="@+id/edSecret"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Secret"
                             android:inputType="textNoSuggestions"
                             android:textSize="14sp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +102,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="0dp"
-                        android:text="JWT токен" />
+                        android:text="@string/lbl_token" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/inputJwt"
@@ -120,7 +118,7 @@
                             android:id="@+id/edJwt"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="jwt токен"
+                            android:hint="@string/hint_token"
                             android:inputType="textNoSuggestions"
                             android:textSize="14sp" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -136,7 +134,7 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="0dp"
-                        android:text="Callback" />
+                        android:text="@string/lbl_callback" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/inputCallback"
@@ -152,10 +150,9 @@
                             android:id="@+id/edCallback"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="callback"
                             android:inputType="textNoSuggestions"
                             android:maxLength="258"
-                            android:text="https://dio.privatbank.ua"
+                            android:text="@string/def_callback"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -168,13 +165,50 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
+                    <LinearLayout
+                        android:id="@+id/grDescr"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvDescr"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:text="@string/descr" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputDescr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="100"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edDescr"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textNoSuggestions"
+                                android:maxLength="258"
+                                android:text="@string/def_descr"
+                                android:textSize="14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/summa">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/amountEditText"
+                            android:id="@+id/edSumma"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="100dp"
@@ -302,6 +336,7 @@
                         android:paddingBottom="16dp"
                         android:text="@string/get_check"
                         android:textSize="12sp"
+                        android:visibility="gone"
                         app:cornerRadius="36dp" />
 
                 </LinearLayout>
